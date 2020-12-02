@@ -8,9 +8,11 @@ OS:Ubuntu 20.04.1LTS
 * ジャンパーワイヤ(オスメス) 6本  
 * 抵抗(25Ω)　４本    
 * ブレッドボード  
-# 回路
+# 配線方法
  <img src= "https://github.com/k-Ryunosuke/robot-system/blob/main/195941.png" width="700" > 
  
  上図のように接続する。  
  上図Ledはすべて左がアノードである。つなぎ方は,  
  一番左からGPIO25, GND, GPIO12, GND, GPIO4, GPIO16, GNDとして繋いでいく。 
+# 実行方法
+$ git clone
