@@ -14,7 +14,31 @@ OS:Ubuntu 20.04.1LTS
  上図のように接続する。  
  上図Ledはすべて左がアノードである。つなぎ方は,  
  一番左からGPIO25, GND, GPIO12, GND, GPIO4, GPIO16, GNDとして繋いでいく。 
-# 実行方法
+# インストール方法
 ```bash
 $ git clone https://github.com/k-Ryunosuke/robot-system.git
+$ make
+$ sudo insmod myled.ko
+$ sudo chmod 666 /dev/myled0
+```
+# 実行方法
+左から一回づつ点滅
+```bash
+$ echo 1 > /dev/myled0
+```
+左から一回づつ点滅を2回繰り返す
+```bash
+$ echo 2 > /dev/myled0
+```
+左から一回づつ点滅を3回繰り返す
+```bash
+$ echo 3 > /dev/myled0
+```
+左から一回づつ点滅を4回繰り返す
+```bash
+$ echo 4 > /dev/myled0
+```
+イルミネーションのように点滅
+```bash
+$ echo 5 > /dev/myled0
 ```
