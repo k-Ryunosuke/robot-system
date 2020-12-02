@@ -23,7 +23,8 @@ $ sudo chmod 666 /dev/myled0
 ```
 # 実行方法
 以下5つの方法で点滅させることができます。  
-  
+
+
 左から一回づつ点滅
 ```bash
 $ echo 1 > /dev/myled0
