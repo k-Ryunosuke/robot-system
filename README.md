@@ -47,4 +47,3 @@ $ echo 5 > /dev/myled0
 ```
 # 実行動画
 https://www.youtube.com/watch?v=IImJt9w2ZRg&feature=youtu.be
-[![LED](http://img.youtube.com/vi/UDOO2g307oI/hqdefault.jpg)](https://youtu.be/UDOO2g307oI)
