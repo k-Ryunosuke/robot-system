@@ -14,14 +14,14 @@ OS:Ubuntu 20.04.1LTS
  上図のように接続する。  
  上図Ledはすべて左がアノードである。つなぎ方は,  
  一番左からGPIO25, GND, GPIO12, GND, GPIO4, GPIO16, GNDとして繋いでいく。 
-# インストール方法
+# 実行方法
 ```bash
 $ git clone https://github.com/k-Ryunosuke/robot-system.git
 $ make
 $ sudo insmod myled.ko
 $ sudo chmod 666 /dev/myled0
 ```
-# 実行方法
+
 以下5つの光り方で点滅させることができます。  
   
     
@@ -45,3 +45,5 @@ $ echo 4 > /dev/myled0
 ```bash
 $ echo 5 > /dev/myled0
 ```
+# 実行動画
+https://www.youtube.com/watch?v=IImJt9w2ZRg&feature=youtu.be
