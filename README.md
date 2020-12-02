@@ -15,4 +15,6 @@ OS:Ubuntu 20.04.1LTS
  上図Ledはすべて左がアノードである。つなぎ方は,  
  一番左からGPIO25, GND, GPIO12, GND, GPIO4, GPIO16, GNDとして繋いでいく。 
 # 実行方法
-$ git clone
+```bash
+$ git clone https://github.com/k-Ryunosuke/robot-system.git
+```
