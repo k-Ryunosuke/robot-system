@@ -9,4 +9,4 @@ OS:Ubuntu 20.04.1LTS
 ・抵抗(25Ω)  
 ・ブレッドボード  
 # 回路
- <img src= "https://user-images.githubusercontent.com/72371336/99922881-2f6d1180-2d76-11eb-8f82-2cab2aff505c.png" width="400" >
+ <img src= "https://k-Ryunosuke/robot-system/main/.png" width="400" >
