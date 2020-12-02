@@ -9,7 +9,7 @@ OS:Ubuntu 20.04.1LTS
 ・抵抗(25Ω)  
 ・ブレッドボード  
 # 回路
- <img src= "https://github.com/k-Ryunosuke/robot-system/blob/main/195941.png" width="600" >
- 上図のように接続する  
+ <img src= "https://github.com/k-Ryunosuke/robot-system/blob/main/195941.png" width="700" >
+ 上図のように接続する　　
  上図Ledはすべて左がアノードである。つなぎ方は、    
  一番左からGPIO25, GND, GPIO12, GND, GPIO4, GPIO16, GND  
