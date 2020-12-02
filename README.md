@@ -46,4 +46,4 @@ $ echo 4 > /dev/myled0
 $ echo 5 > /dev/myled0
 ```
 # 実行動画
-https://www.youtube.com/watch?v=IImJt9w2ZRg&feature=youtu.be
+https://youtu.be/IImJt9w2ZRg
