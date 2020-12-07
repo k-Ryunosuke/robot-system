@@ -5,16 +5,16 @@
 # 動作環境
 OS:Ubuntu 20.04.1LTS
 # 準備するもの
-* raspbery pi 3b+  
-* 5mmmLED（色は任意)  
+* Raspbery Pi 3B+  
+* 5mmLED（色は任意)  
 * ジャンパーワイヤ(オスメス) 6本  
-* 抵抗(25Ω)　４本    
+* 抵抗(250Ω)　4本    
 * ブレッドボード  
 # 配線方法
  <img src= "https://github.com/k-Ryunosuke/robot-system/blob/main/195941.png" width="700" > 
  
  上図のように接続してください。  
- 上図Ledはすべて左がアノードとなっています。つなぎ方は,  
+ 上図LEDはすべて左がアノードとなっています。つなぎ方は,  
  一番左からGPIO25, GND, GPIO12, GND, GPIO4, GPIO16, GNDとして繋いでください。
 # 実行方法
 ```bash
