@@ -51,5 +51,5 @@ $ echo 5 > /dev/myled0
 [![LED](http://img.youtube.com/vi/IImJt9w2ZRg/hqdefault.jpg)](https://youtu.be/IImJt9w2ZRg)
 https://youtu.be/IImJt9w2ZRg
 
-#ライセンス
-https://github.com/k-Ryunosuke/robot-system/blob/main/COPYING
+# ライセンス
+[GNU General Public License v3.0](https://github.com/k-Ryunosuke/robot-system/blob/main/COPYING)
