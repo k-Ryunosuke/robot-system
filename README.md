@@ -1,29 +1,34 @@
-# robotsystem
+# robot-system
 ロボットシステム学課題
-# 内容
-4つのLEDが左から1~4回の任意の回数光らせたり、イルミネーションのように点滅させます。
+# 概要
+4つのLEDを左から1~4回の任意の回数光らせたり、イルミネーションのように点滅させるデバイスドライバを作成しました。
 # 動作環境
-OS:Ubuntu 20.04.1LTS
-# 準備するもの
-* raspbery pi 3b+  
-* 5mmmLED（色は任意)  
+* Raspbery Pi 3B+
+* OS:Ubuntu 20.04.1LTS
+# 使用したもの  
+* 5mmLED（色は任意)  
 * ジャンパーワイヤ(オスメス) 6本  
-* 抵抗(25Ω)　４本    
+* 抵抗(250Ω)　4本    
 * ブレッドボード  
+
+# 実行動画
+[![LED](http://img.youtube.com/vi/IImJt9w2ZRg/hqdefault.jpg)](https://youtu.be/IImJt9w2ZRg)
+https://youtu.be/IImJt9w2ZRg
+
 # 配線方法
  <img src= "https://github.com/k-Ryunosuke/robot-system/blob/main/195941.png" width="700" > 
  
- 上図のように接続する。  
- 上図Ledはすべて左がアノードである。つなぎ方は,  
- 一番左からGPIO25, GND, GPIO12, GND, GPIO4, GPIO16, GNDとして繋いでいく。 
-# 実行方法
+ 上図のように接続してください。  
+ 上図LEDはすべて左がアノードとなっています。つなぎ方は,  
+ 一番左からGPIO25, GND, GPIO12, GND, GPIO4, GPIO16, GNDとして繋いでください。
+# インストール方法
 ```bash
 $ git clone https://github.com/k-Ryunosuke/robot-system.git
 $ make
 $ sudo insmod myled.ko
 $ sudo chmod 666 /dev/myled0
 ```
-
+# 使用方法
 以下5つの光り方で点滅させることができます。  
   
     
@@ -47,5 +52,6 @@ $ echo 4 > /dev/myled0
 ```bash
 $ echo 5 > /dev/myled0
 ```
-# 実行動画
-[![LED](http://img.youtube.com/vi/IImJt9w2ZRg/hqdefault.jpg)](https://youtu.be/IImJt9w2ZRg)
+
+# ライセンス
+[GNU General Public License v3.0](https://github.com/k-Ryunosuke/robot-system/blob/main/COPYING)
