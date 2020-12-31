@@ -19,7 +19,9 @@ static struct class *cls = NULL;
 static volatile u32 *gpio_base = NULL;
 static int led_array[4] = {25,4,12,16};
 static int led_on_array[4] = {25,12,4,16};
-int count=0;
+static int led[4] = {12,16,25,4};
+static int gpio_num[4] = {10,10,7,7};
+static int count=0;
 
 static void led_on(void){
         for(count=0;count<4;count++){
@@ -73,27 +75,23 @@ static ssize_t led_write(struct file* filp, const char* buf, size_t count, loff_
                                 gpio_base[10] = 1 << led_on_array[count];
                                 mdelay(200-i*40);
                         }
-                        gpio_base[7] = 1 << 4;
-                        mdelay(200-40*i);
-                        gpio_base[10] = 1 << 4;
-                        mdelay(200-40*i);
-                        gpio_base[7] = 1 << 12;
-                        mdelay(200-40*i);
-                        gpio_base[10] = 1 << 12;
-                        mdelay(200-40*i);
+                        for(count=1;count<3;count++){
+                                gpio_base[7] = 1 << led_array[count];
+                                mdelay(200-40*i);
+                                gpio_base[10] = 1 << led_array[count];
+                                mdelay(200-40*i);           
+                        }
                 }
                 all_off();
                 for(i=0;i<15;i++){
-                        gpio_base[10] = 1 << 25;
-                        gpio_base[10] = 1 << 4;
-                        gpio_base[7] = 1 << 12;
-                        gpio_base[7] = 1 << 16;
-                        mdelay(50);
-                        gpio_base[10] = 1 << 12;
-                        gpio_base[10] = 1 << 16;
-                        gpio_base[7] = 1 << 25;
-                        gpio_base[7] = 1 << 4;
-                        mdelay(50);
+                        for(count=0;count<4;count++){
+                                gpio_base[gpio_num[count]] = 1 << led_array[count];
+                                mdelay(50);
+                        }
+                        for(count=0;count<4;count++){
+                                gpio_base[gpio_num[count]] = 1 << led[count];
+                                mdelay(50);
+                        }
                 }
                 all_on();
                 for(i=0;i<15;i++){
