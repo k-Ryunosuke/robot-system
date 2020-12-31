@@ -18,39 +18,28 @@ static struct cdev cdv;
 static struct class *cls = NULL;
 static volatile u32 *gpio_base = NULL;
 static int led_array[4] = {25,4,12,16};
-
+static int led_on_array[4] = {25,12,4,16};
+int count=0;
 
 static void led_on(void){
-        gpio_base[7] = 1 << 25;
-        mdelay(100);
-        gpio_base[10] = 1 << 25;
-        mdelay(100);
-        gpio_base[7] = 1 << 12;
-        mdelay(100);
-        gpio_base[10] = 1 << 12;
-        mdelay(100);
-        gpio_base[7] = 1 << 4;
-        mdelay(100);
-        gpio_base[10] = 1 << 4;
-        mdelay(100);
-        gpio_base[7] = 1 << 16;
-        mdelay(100);
-        gpio_base[10] = 1 << 16;
-        mdelay(100);
+        for(count=0;count<4;count++){
+                gpio_base[7] = 1 << led_on_array[count];
+                mdelay(100);
+                gpio_base[10] = 1 << led_on_array[count];
+                mdelay(100);
+        }
 }
 
 static void all_off(void){
-        gpio_base[7] = 1 << 25;
-        gpio_base[7] = 1 << 12;
-        gpio_base[7] = 1 << 4;
-        gpio_base[7] = 1 << 16;
+        for(count=0;count<4;count++){
+                gpio_base[7] = 1 << led_on_array[count];
+        }
 }
 
 static void all_on(void){
-        gpio_base[10] = 1 << 25;
-        gpio_base[10] = 1 << 12;
-        gpio_base[10] = 1 << 4;
-        gpio_base[10] = 1 << 16;
+        for(count=0;count<4;count++){
+                gpio_base[10] = 1 << led_on_array[count];
+        }
 }
 
 
@@ -78,22 +67,12 @@ static ssize_t led_write(struct file* filp, const char* buf, size_t count, loff_
                 }
         }else if(c == '5'){
                 for(i=0;i<4;i++){
-                        gpio_base[7] = 1 << 25;
-                        mdelay(200-i*40);
-                        gpio_base[10] = 1 << 25;
-                        mdelay(200-i*40);
-                        gpio_base[7] = 1 << 12;
-                        mdelay(200-i*40);
-                        gpio_base[10] = 1 << 12;
-                        mdelay(200-i*40);
-                        gpio_base[7] = 1 << 4;
-                        mdelay(200-i*40);
-                        gpio_base[10] = 1 << 4;
-                        mdelay(200-40*i);
-                        gpio_base[7] = 1 << 16;
-                        mdelay(200-40*i);
-                        gpio_base[10] = 1 << 16;
-                        mdelay(200-40*i);
+                        for(count=0;count<4;count++){
+                                gpio_base[7] = 1 << led_on_array[count];
+                                mdelay(200-i*40);
+                                gpio_base[10] = 1 << led_on_array[count];
+                                mdelay(200-i*40);
+                        }
                         gpio_base[7] = 1 << 4;
                         mdelay(200-40*i);
                         gpio_base[10] = 1 << 4;
